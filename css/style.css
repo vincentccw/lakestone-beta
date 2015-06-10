@@ -1,0 +1,454 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Reset
+2.0 Default
+3.0 Theme default
+4.0 Theme default for CMS (if any)
+5.0 Outermost templates
+6.0 Structure templates
+7.0 Ads templates
+8.0 Content templates
+--------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------1.0 Reset-------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*-------------------------------------------------------------------------------end 1.0 Reset-------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------2.0 Default-------------------------------------------------------------------------------------*/
+/* v11 set default for CMS base and responsive website. */
+/* Default 16px=1em=100%=12pt */
+
+html, body{
+	width:100%;
+	height:100%;
+}
+
+html{
+/*updated 28-10-2014*/
+-webkit-text-size-adjust: 100%;	
+/*http://blog.55minutes.com/2012/04/iphone-text-resizing/*/	
+
+/* do not use this
+-webkit-text-size-adjust: none;
+Prevent font scaling in landscape for iphone
+http://cssmatter.com/blog/preserve-html-font-size-when-iphone-orientation-changes-from-portrait-to-landscape/
+*/
+}
+
+body {font-size:1em; line-height: 1;}
+
+img{
+	max-width:100%;
+	display: inline; /*allow center align default using text align(non standard) */
+	vertical-align: middle;
+	/*margin: 5px; hspace and vspace in cms is depreciated*/
+	width:auto\9;
+}
+
+	.js img{/*use js to fade in by default only if Javascript is enabled
+		opacity:0;*/
+	}
+
+h1 {font-size: 1.7em;}
+h2 {font-size: 1.5em;}
+h3 {font-size: 1.3em;}
+h4 {font-size: 1.1em;}
+h5 {font-size: 0.9em;}
+h6 {font-size: 0.8em;}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight:bold;
+}
+
+ol, ul{ padding-left:1.4em; margin-top: 10px; margin-bottom: 10px;} /*to show the bullet outside, if not use list-style-position=inside....*/
+
+ol li{list-style-type: decimal; margin-bottom: 5px;}
+ul li{list-style-type: disc; margin-bottom: 5px;}
+
+em, i {font-style: italic;}
+strong, b {font-weight: bold;}
+
+p, address, pre {}
+
+blockquote {margin: 0px 36px; /* background-color: #f5f5f5; */}
+
+:focus {outline: 0;}
+
+a,a:link{
+-webkit-transition: color 0.7s ease;
+-moz-transition: color 0.7s ease;
+-o-transition: color 0.7s ease;
+transition: color 0.7s ease;
+text-decoration:none;/*fix underline link for safari using a:link, also remove underline style for all link by default*/
+}
+
+a:link    {color:black;}
+a:visited {color:black;}
+a:hover {color:#666;}
+a:active  {color:black;}
+
+input,textarea,button{
+-webkit-transition: all 0.30s ease-in-out,color 0.30s ease-in-out;
+-moz-transition: all 0.30s ease-in-out,color 0.30s ease-in-out;
+-ms-transition: all 0.30s ease-in-out,color 0.30s ease-in-out;
+-o-transition: all 0.30s ease-in-out,color 0.30s ease-in-out;		
+}
+
+input:not([type=checkbox]){
+  /*chrome will remove default checkbox, so rule out checkbox, when apply fix for ios rounding corners and style, ie9 and above*/
+    -webkit-appearance: none;
+    border-radius:0;
+}
+
+
+hr{
+padding: 0;
+border: 0;
+height: 1px;
+background: #D6D3C4;
+margin: 15px 0;
+}
+
+
+table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+
+table td{
+	vertical-align:middle;
+}
+
+/*custom table structure=======================================================*/
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: auto;
+    margin-top:3px;
+}
+
+	.table .table-row{
+		display: table-row;
+		width: 100%;
+	}
+
+	.table .table-row.row-space{
+		height: 10px;
+	}
+
+	.table .table-row.hide{
+		display:none;
+	}
+
+	.table .table-row.hide .warning-message{
+		color: #2ebcfe;
+		font-size:.8em;
+	}
+	
+		.table .table-row .table-cell{
+			display: table-cell;
+			padding: 5px 0;
+			position: relative;
+			vertical-align: middle;
+		}
+
+/*styling for nested table==================*/
+.table .table-row .table-cell .table{
+   margin-top:0px;
+}
+
+	.table .table-row .table-cell .table .table-row {
+	}
+	
+		.table .table-row .table-cell .table .table-row .table-cell{
+			padding:0;
+		}
+/*styling for nested table==================*/
+/*end custom table structure=======================================================*/
+
+/*placeholder style=======================*/
+::-webkit-input-placeholder {
+   color: #5E7D7F;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #5E7D7F;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #5E7D7F;  
+}
+
+:-ms-input-placeholder {  
+   color: #5E7D7F;  
+}
+/*end placeholder style=======================*/
+
+/*highlight colour=======================*/
+::selection {/* WebKit/Blink Browsers */
+  background: #e780a9; 
+  color:white;
+}
+::-moz-selection {/* Gecko Browsers */
+  background: #e780a9; 
+  color:white;
+}
+/*end highlight colour=======================*/
+
+
+/*default form setting=======================*/
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-size: 1em;
+	line-height: 1;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus{
+	border: 1px solid grey;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+	background: black;
+	margin: 0;
+	padding: 5px 15px 6px 15px;
+	border: 0;
+	text-transform: uppercase;
+	border-radius: 11px;
+	cursor: pointer;
+	color: white;
+	font-size: 1em;
+	line-height: 1;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+	background: grey;
+}
+
+button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled {
+    background: #999;
+	color:white;
+}
+
+button:disabled:hover,
+input[type="submit"]:disabled:hover,
+input[type="reset"]:disabled:hover {
+	cursor:default;
+}
+
+/*-------------------------------------------------------------------------------end 2.0 Default-------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------3.0 Theme default-------------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('allsection/alllanguage/live-fonts/Gotham-Medium/Gotham-Medium.eot?#iefix') format('embedded-opentype'),  url('allsection/alllanguage/live-fonts/Gotham-Medium/Gotham-Medium.otf')  format('opentype'),
+	     url('allsection/alllanguage/live-fonts/Gotham-Medium/Gotham-Medium.woff') format('woff'), url('allsection/alllanguage/live-fonts/Gotham-Medium/Gotham-Medium.ttf')  format('truetype'), url('allsection/alllanguage/live-fonts/Gotham-Medium/Gotham-Medium.svg#Gotham-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+	font-family: 'Sentinel-Book', Times, serif;
+	width:100%;
+}
+
+/*responsive youtube======================================*/
+.videoWrapeer{
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 40px;
+	height: 0;
+
+}
+
+	.videoWrapeer>iframe{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+/*responsive youtube======================================*/
+
+/*sticky footer===============================================================================================*/
+.allWrapperExceptFooter{
+	min-height: 100%;
+	/*margin-bottom: -475px; edit height*/
+	overflow: hidden;
+}
+
+.allWrapperExceptFooter:after {
+	content: "";
+	display: block;
+	/*height: 475px; edit height*/
+}
+
+.mainFooter {  
+   /*height: 475px; edit height*/
+   background: #f5f5f5;
+}
+/*end sticky footer==============================================================================================*/
+
+hr{
+    background: #e6e6e6;
+
+    margin: 17px 0;
+}
+
+::-webkit-input-placeholder {
+   color: #c4c4c4;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #c4c4c4;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #c4c4c4;  
+}
+
+:-ms-input-placeholder {  
+   color: #c4c4c4;  
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	padding: 7px 10px;
+	border-radius: 4px;
+	
+	border: 1px solid #a5a9b0;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus{
+	border: 1px solid #726666;
+}
+
+button,input[type="submit"],
+input[type="reset"] {
+    background: #eeeeee;
+    color: #000000;
+    border: 1px solid #cccccc;
+    line-height: 1;
+    font-size: 1em;
+    font-family: 'GothamNarrow-Book';
+    border-radius: 4px;
+    padding: 7px 15px 5px 15px;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: #e42471;  
+    color: white;
+    border: 1px solid #e42471;
+}
+
+button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled {
+    background: #999;
+    border: 1px solid  #999;
+	color:white;
+}
+
+button:disabled:hover,
+input[type="submit"]:disabled:hover,
+input[type="reset"]:disabled:hover {
+	cursor:default;
+}
+/*-------------------------------------------------------------------------------end 3.0 Theme default-------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------4.0 Theme default for CMS (if any)---------------------------------------------------------------------------------------*/
+
+/*tags consideration for sub template, h1,h2,h3,h4,h5,h6, ol, ul, li, p, address, pre, blockquote*/
+
+/*-------------------------------------------------------------------------------end 4.0 Theme default for CMS (if any)-------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------5.0 Outermost templates---------------------------------------------------------------------------------------*/
+/*======================================================header===================================================================*/
+
+/*======================================================end header============================================================*/
+/*-------------------------------------------------------------------------------end 5.0 Outermost templates-------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------6.0 Structure templates-------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------end 6.0 Structure templates-------------------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------------7.0 Ads templates-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------end 7.0 Ads templates-------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------8.0 Content templates---------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------end 8.0 Content templates------------------------------------------------------------------------------------*/
