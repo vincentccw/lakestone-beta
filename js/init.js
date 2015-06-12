@@ -99,6 +99,15 @@ $(document).ready(function () {
 	/*window load===================================================================================================*/
 	$(window).load(function() {	
 	
+		$('.navigation').append("<img src='images/nav-hover.png' />");
+		
+		$( "#main-navigation" ).menu({
+  			//position: { my: "right bottom", at: "right-5 top+5" }
+		});
+		
+		//var dropdown=new TINY.dropdown.init("dropdown", {id:'main-navigation', active:'navigationHover', fade:true, slide:true, speed:8,timeout:100});
+
+		//var dropdown=new TINY.dropdown.init("dropdown", {id:'main-navigation', active:'menuhover'});
 	
 	});
 	/*end window load===================================================================================================*/

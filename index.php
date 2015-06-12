@@ -45,24 +45,62 @@
 <meta itemprop="image" content="xxxx">
 <!--end open graph(facebook), twitter card(twitter) and schema(g+)-->
 
+  <link href="js/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet">
+
 </head>
 
 <body>
 <!--to create sticky footer-->
 <div class="allWrapperExceptFooter">
-  
-  
-  
+
+<header class="main-header">
+
+<div class="wrapper">
+
+    <div class="logo"></div>
+    
+    <div class="navigation">
+        <ul id="main-navigation">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Our businesses</a>
+            
+                 <ul>
+                      <li class="ui-state-disabled">Ada</li>
+                      <li>Saarland</li>
+                      <li>Salzburg an der schönen Donau</li>
+                    </ul>
+            
+            </li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </div>
+
+
+
+
+</div>
+
+</header>
+
+<div class="main-content">
+
+<div class="wrapper">
+
+</div>
+
+</div>
+
 </div>  
 <!--end to create sticky footer--> 
 
-<footer class="mainFooter">
+<footer class="main-footer">
 
 </footer>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
 <script src="http://modernizr.com/downloads/modernizr-latest.js"></script> 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> 
+<script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 <script src="js/init.js"></script>
 </body>
 </html>

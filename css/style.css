@@ -305,6 +305,8 @@ input[type="reset"]:disabled:hover {
 /*-------------------------------------------------------------------------------end 2.0 Default-------------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------3.0 Theme default-------------------------------------------------------------------------------------*/
+
+/*
 @font-face {
   font-family: 'Gotham-Medium';
   src: url('allsection/alllanguage/live-fonts/Gotham-Medium/Gotham-Medium.eot?#iefix') format('embedded-opentype'),  url('allsection/alllanguage/live-fonts/Gotham-Medium/Gotham-Medium.otf')  format('opentype'),
@@ -312,16 +314,17 @@ input[type="reset"]:disabled:hover {
   font-weight: normal;
   font-style: normal;
 }
+*/
 
 body{
-	font-family: 'Sentinel-Book', Times, serif;
+	font-family:Arial, Helvetica, sans-serif;
 	width:100%;
 }
 
 /*responsive youtube======================================*/
 .videoWrapeer{
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
+	padding-bottom: 56.25%;/* 16:9 */
 	padding-top: 40px;
 	height: 0;
 
@@ -357,7 +360,6 @@ body{
 
 hr{
     background: #e6e6e6;
-
     margin: 17px 0;
 }
 
@@ -438,9 +440,81 @@ input[type="reset"]:disabled:hover {
 
 /*---------------------------------------------------------------------------------5.0 Outermost templates---------------------------------------------------------------------------------------*/
 /*======================================================header===================================================================*/
+.main-header {
+    width: 1366px;    
+    margin: 0 auto;
+}
 
+.main-header .wrapper {
+    padding: 0 66.5px;
+}
+
+.main-header .wrapper .logo {}
+
+.main-header .wrapper .navigation {
+    font-size: 1.4625em;
+    font-weight: bold;
+    background: #309cc8;
+    text-align: center;
+    padding: 17px 0;
+    display: inline-block;
+	position:relative;
+}
+
+.main-header .wrapper .navigation>img{
+	position:absolute;
+	top: 75%;
+	left: -150px;
+}
+
+.main-header .wrapper .navigation ul {
+    padding: 0;
+    margin: 0;
+}
+
+.main-header .wrapper .navigation ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    margin: 0 50px;
+}
+
+.main-header .wrapper .navigation ul li a {
+    color: white;
+}
+
+/*
+.main-header .wrapper .navigation ul li:hover {
+	background:url(../images/nav-hover.png);
+	width:138px;
+	height:7px;
+	background-repeat: no-repeat;
+}
+*/
 /*======================================================end header============================================================*/
+
+/*==============main-content=====================*/
+.main-content {}
+
+.main-content .wrapper {}
+/*======================end main-content===============*/
+
+
+/*plugin menu overwrite=========*/
+.ui-widget-content {
+    border: none;
+    background: none;
+    color: white;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+    display: none;
+}
+/*end plugin menu overwrite=========*/
+
 /*-------------------------------------------------------------------------------end 5.0 Outermost templates-------------------------------------------------------------------------------------*/
+
+
 
 /*-------------------------------------------------------------------------------6.0 Structure templates-------------------------------------------------------------------------------------*/
 
